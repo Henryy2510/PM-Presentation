@@ -69,13 +69,14 @@ window.MathJax = {
   .slide {
     position: absolute;
     inset: 0;
-    padding: 2.6% 3.8% 5.2% 3.8%;
+    padding: 2.2% 3.2% 1.8% 3.2%;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--bg-cream);
     opacity: 0;
     transition: opacity 0.28s ease;
+    box-sizing: border-box;
   }
 
   .slide.active {
@@ -86,8 +87,8 @@ window.MathJax = {
   /* Header Bar */
   .slide-header {
     border-bottom: 1.5px solid var(--ink-dark);
-    padding-bottom: 0.7rem;
-    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.85rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -99,12 +100,12 @@ window.MathJax = {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent-burgundy);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
   }
 
   .slide-title {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 2.15rem;
+    font-size: 2.1rem;
     font-weight: 400;
     line-height: 1.08;
     color: var(--ink-dark);
@@ -121,59 +122,66 @@ window.MathJax = {
   /* Main Content Grid */
   .slide-body {
     flex: 1;
+    min-height: 0;
     display: grid;
-    gap: 1.15rem;
+    gap: 1.1rem;
     overflow: hidden;
     align-items: stretch;
+  }
+
+  .slide-body > * {
+    min-width: 0;
+    min-height: 0;
   }
 
   .grid-2 { grid-template-columns: 1.05fr 0.95fr; }
   .grid-2-equal { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
-  .grid-left-wide { grid-template-columns: 1.25fr 0.75fr; }
-  .grid-right-wide { grid-template-columns: 0.82fr 1.18fr; }
+  .grid-left-wide { grid-template-columns: 1.12fr 0.88fr; }
+  .grid-right-wide { grid-template-columns: 0.88fr 1.12fr; }
 
   /* Cards & Panels */
   .panel {
     background-color: var(--bg-white);
     border: 1px solid var(--border-rule);
     border-radius: 4px;
-    padding: 0.95rem 1.15rem;
+    padding: 0.85rem 1.05rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 0;
   }
 
   .panel-tinted {
     background-color: var(--bg-card);
     border: 1px solid var(--border-rule);
     border-radius: 4px;
-    padding: 0.95rem 1.15rem;
+    padding: 0.8rem 1rem;
   }
 
   .panel-burgundy {
     background-color: var(--accent-burgundy-light);
     border-left: 4px solid var(--accent-burgundy);
-    padding: 0.85rem 1.1rem;
+    padding: 0.75rem 1rem;
     border-radius: 2px;
   }
 
   .panel-navy {
     background-color: var(--accent-navy-light);
     border-left: 4px solid var(--accent-navy);
-    padding: 0.85rem 1.1rem;
+    padding: 0.75rem 1rem;
     border-radius: 2px;
   }
 
   .panel-title {
-    font-size: 0.76rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.08em;
     color: var(--ink-muted);
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-rule);
-    padding-bottom: 0.35rem;
+    padding-bottom: 0.3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -183,15 +191,15 @@ window.MathJax = {
   .kpi-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    gap: 0.7rem;
+    margin-bottom: 0.65rem;
   }
 
   .kpi-box {
     background: var(--bg-white);
     border: 1px solid var(--border-rule);
     border-top: 3px solid var(--accent-burgundy);
-    padding: 0.65rem 0.85rem;
+    padding: 0.6rem 0.8rem;
   }
 
   .kpi-box.navy { border-top-color: var(--accent-navy); }
@@ -199,23 +207,23 @@ window.MathJax = {
 
   .kpi-val {
     font-family: 'Instrument Serif', serif;
-    font-size: 2.05rem;
+    font-size: 2rem;
     line-height: 1;
     color: var(--ink-dark);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
   }
 
   .kpi-label {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--ink-muted);
   }
 
   .kpi-sub {
-    font-size: 0.66rem;
+    font-size: 0.64rem;
     color: var(--ink-light);
     font-family: 'JetBrains Mono', monospace;
-    margin-top: 0.15rem;
+    margin-top: 0.12rem;
   }
 
   /* Typography & Lists */
@@ -223,12 +231,12 @@ window.MathJax = {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.5rem;
   }
 
   ul.exec-list li {
-    font-size: 0.82rem;
-    line-height: 1.42;
+    font-size: 0.8rem;
+    line-height: 1.4;
     color: var(--ink-dark);
     padding-left: 1rem;
     position: relative;
@@ -246,9 +254,9 @@ window.MathJax = {
     background: #FFFFFF;
     border: 1px solid var(--border-rule);
     border-left: 3.5px solid var(--accent-navy);
-    padding: 0.55rem 0.85rem;
-    margin: 0.45rem 0;
-    font-size: 0.82rem;
+    padding: 0.5rem 0.8rem;
+    margin: 0.4rem 0;
+    font-size: 0.8rem;
     overflow-x: auto;
   }
 
@@ -256,22 +264,22 @@ window.MathJax = {
   table.quant-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.73rem;
+    font-size: 0.72rem;
   }
 
   table.quant-table th {
     background-color: var(--ink-dark);
     color: #FFF;
     text-align: left;
-    padding: 0.42rem 0.55rem;
+    padding: 0.4rem 0.5rem;
     font-weight: 600;
-    font-size: 0.69rem;
+    font-size: 0.68rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
 
   table.quant-table td {
-    padding: 0.38rem 0.55rem;
+    padding: 0.35rem 0.5rem;
     border-bottom: 1px solid var(--border-rule);
     font-variant-numeric: tabular-nums;
   }
@@ -298,7 +306,7 @@ window.MathJax = {
   .badge {
     display: inline-block;
     padding: 0.1rem 0.4rem;
-    font-size: 0.64rem;
+    font-size: 0.62rem;
     font-weight: 700;
     border-radius: 2px;
     text-transform: uppercase;
@@ -309,88 +317,89 @@ window.MathJax = {
   .badge-weak { background: #FFF3CD; color: #856404; }
   .badge-fail { background: #F8D7DA; color: #721C24; }
 
-  /* Takeaway Banner */
-  .bottom-takeaway {
-    margin-top: 0.65rem;
-    background-color: var(--ink-dark);
-    color: var(--bg-cream);
-    padding: 0.48rem 0.95rem;
-    font-size: 0.76rem;
-    border-radius: 3px;
+  /* CFA Institutional Research Footer Bar */
+  .slide-footer {
+    height: 2.5rem;
+    min-height: 2.5rem;
+    border-top: 1.5px solid var(--border-rule);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 0.35rem;
+    margin-top: 0.5rem;
+    font-size: 0.68rem;
+    z-index: 10;
   }
 
-  .bottom-takeaway strong {
-    color: #F3C663;
-    margin-right: 0.4rem;
-  }
-
-  /* Unified CFA-Style Progress Footer Bar (Fixes UCP 600 copy-paste bug!) */
-  .deck-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3.1rem;
-    background-color: var(--bg-card);
-    border-top: 1px solid var(--border-rule);
+  .footer-cfa-track {
     display: flex;
+    gap: 0.3rem;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 3.8%;
-    z-index: 20;
+    flex-wrap: nowrap;
   }
 
-  .progress-track {
-    display: flex;
-    gap: 0.35rem;
-    align-items: center;
-    flex: 1;
-  }
-
-  .prog-step {
-    font-size: 0.66rem;
+  .cfa-step {
+    font-size: 0.63rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 0.32rem 0.65rem;
+    letter-spacing: 0.05em;
+    padding: 0.22rem 0.5rem;
     color: var(--ink-light);
-    border-bottom: 2.5px solid transparent;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
     transition: all 0.2s;
     white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    border-radius: 2px 2px 0 0;
   }
 
-  .prog-step:hover {
+  .cfa-step:hover {
+    color: var(--ink-dark);
+    background-color: rgba(0,0,0,0.03);
+  }
+
+  .cfa-step.active {
+    color: var(--accent-burgundy);
+    border-bottom-color: var(--accent-burgundy);
+    background-color: rgba(124, 37, 41, 0.07);
+    font-weight: 700;
+  }
+
+  .footer-meta-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    color: var(--ink-muted);
+  }
+
+  .footer-source {
+    color: var(--ink-light);
+  }
+
+  .footer-slide-num {
+    font-weight: 700;
     color: var(--ink-dark);
   }
 
-  .prog-step.active-sec {
-    color: var(--accent-burgundy);
-    border-bottom-color: var(--accent-burgundy);
-    background-color: rgba(124, 37, 41, 0.06);
-  }
-
-  .footer-controls {
+  .screen-controls {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--ink-muted);
+    gap: 0.3rem;
   }
 
   .ctrl-btn {
     background: var(--bg-white);
     border: 1px solid var(--border-rule);
-    padding: 0.25rem 0.55rem;
-    font-size: 0.7rem;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.66rem;
     cursor: pointer;
     border-radius: 3px;
     color: var(--ink-dark);
     font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.15s;
   }
 
   .ctrl-btn:hover {
@@ -401,9 +410,9 @@ window.MathJax = {
   /* Speaker Notes Drawer */
   #notes-drawer {
     position: fixed;
-    bottom: 3.2rem;
+    bottom: 3.5rem;
     right: 1.5rem;
-    width: 460px;
+    width: 480px;
     max-height: 65vh;
     background: rgba(20, 20, 20, 0.96);
     color: #EAE6DF;
@@ -432,17 +441,45 @@ window.MathJax = {
 
   /* Print PDF Support */
   @media print {
-    body { background: none; overflow: visible; height: auto; display: block; }
-    #deck-viewport { width: 100%; height: auto; max-width: none; max-height: none; box-shadow: none; }
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+    html, body {
+      background: #FFF !important;
+      overflow: visible !important;
+      height: auto !important;
+      display: block !important;
+    }
+    #deck-viewport {
+      width: 100% !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+      box-shadow: none !important;
+      overflow: visible !important;
+      background: transparent !important;
+    }
     .slide {
-      position: relative;
+      position: relative !important;
       display: flex !important;
       opacity: 1 !important;
-      page-break-after: always;
-      height: 100vh;
-      width: 100vw;
+      page-break-after: always !important;
+      page-break-inside: avoid !important;
+      height: 100vh !important;
+      width: 100vw !important;
+      padding: 2.2% 3.2% 1.8% 3.2% !important;
+      box-sizing: border-box !important;
+      background-color: var(--bg-cream) !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
-    .deck-footer .ctrl-btn, #notes-drawer { display: none !important; }
+    .screen-controls, #notes-drawer, .ctrl-btn {
+      display: none !important;
+    }
+    .cfa-step {
+      cursor: default !important;
+    }
   }
 </style>
 </head>
@@ -453,7 +490,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 1: TITLE & EXECUTIVE THESIS
        ========================================== -->
-  <section class="slide active" data-section="0">
+  
+
+<section class="slide active" data-section="0">
     <div class="slide-header">
       <div>
         <div class="kicker">INSTITUTIONAL QUANTITATIVE EQUITY RESEARCH • EMPIRICAL ASSET PRICING</div>
@@ -461,11 +500,11 @@ window.MathJax = {
       </div>
       <div class="header-meta">
         <div>Paper by: <strong>Dr. Le Quy Duong (NEU, 2025)</strong></div>
-        <div><em>Journal of Economic Studies</em> • LSE 1995–2024</div>
+        <div><em>Journal of Economic Studies</em> • LSE 2000–2024</div>
       </div>
     </div>
 
-    <div class="slide-body grid-left-wide">
+    <div class="slide-body grid-2">
       <div style="display:flex; flex-direction:column; justify-content:space-between; gap:0.8rem;">
         <div class="kpi-row">
           <div class="kpi-box">
@@ -474,14 +513,14 @@ window.MathJax = {
             <div class="kpi-sub">$t\text{-stat} = 3.615^{***}$ vs. $0.790\%$ ($B/M$)</div>
           </div>
           <div class="kpi-box navy">
-            <div class="kpi-val" style="color:var(--accent-navy);">0.692%</div>
-            <div class="kpi-label">New Value Factor ($\text{NVF}$) Mean</div>
-            <div class="kpi-sub">$t\text{-stat} = 4.442^{***}$ | $\text{SD} = 2.905\%$</div>
+            <div class="kpi-val" style="color:var(--accent-navy);">0.831%</div>
+            <div class="kpi-label">New Value Factor ($	ext{NVF}$) Mean</div>
+            <div class="kpi-sub">$t	ext{-stat} = 5.72^{***} $ | $	ext{SD} = 2.463\%$ [Table 2]</div>
           </div>
           <div class="kpi-box green">
             <div class="kpi-val" style="color:var(--accent-green);">0.180%</div>
             <div class="kpi-label">Post-2006 Conventional $B/M$</div>
-            <div class="kpi-sub">Collapsed after 2006; $\text{CBOP}/M = 0.92\%$</div>
+            <div class="kpi-sub">Collapsed from 3.08%; $\text{CBOP}/M = 1.05\%$ avg</div>
           </div>
         </div>
 
@@ -491,11 +530,11 @@ window.MathJax = {
             <span class="badge badge-sig">CORE THESIS</span>
           </div>
           <div class="formula-box">
-            $$\text{Conventional Value} = \frac{\text{Book Equity}_{i,t-1}}{\text{Market Cap}_{i,t-1}} \quad \xrightarrow{\text{Purging Accruals & Static Bias}} \quad \text{New Value } (\text{CBOP}/M) = \frac{\text{Operating Profit}_{i,t-1} - \Delta \text{Net Working Capital Accruals}_{i,t-1}}{\text{Market Cap}_{i,t-1}}$$
+            $$\text{Conventional: } \frac{\text{BE}_{i,t-1}}{M_{i,t-1}} \quad \xrightarrow{\text{Purge Accruals}} \quad \text{New Value: } \frac{\text{CBOP}_{i,t-1}}{M_{i,t-1}} = \frac{\text{OP}_{i,t-1} - \Delta\text{WC}_{i,t-1}}{M_{i,t-1}}$$
           </div>
           <ul class="exec-list">
             <li><strong>Why Book-to-Market ($B/M$) Failed Post-2006:</strong> In a knowledge-driven economy, intangible assets (R&D, software, human capital) are expensed rather than capitalized on balance sheets, while accounting earnings suffer from working-capital accrual manipulation.</li>
-            <li><strong>Empirical Triumph:</strong> Across $\approx 1,700$ non-financial London Stock Exchange (LSE) firms (July 1995 – June 2024), $\text{CBOP}/M$ generates symmetric, statistically significant profits on <strong>both the Long leg ($+0.584\%, t=2.669$) and Short leg ($-0.592\%, t=-1.787$)</strong>.</li>
+            <li><strong>Empirical Triumph:</strong> Across $\approx 1,700$ non-financial London Stock Exchange (LSE) firms (288 months, July 2000 – June 2024), $\text{CBOP}/M$ generates symmetric, statistically significant profits on <strong>both the Long leg ($+0.584\%, t=2.669$) and Short leg ($-0.592\%, t=-1.787$)</strong>.</li>
             <li><strong>Our Constructive Extension:</strong> We present the complete econometric evidence (Tables 1–12), uncover <strong>5 critical limitations</strong> (including Big-Cap alpha decay in Table 11 & the Intangible $\text{SG\&A}$ paradox), and introduce a <strong>2-Layer Live Trading Optimization Framework</strong>.</li>
           </ul>
         </div>
@@ -572,8 +611,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>EXECUTIVE TAKEAWAY:</strong> Value investing is not dead in the UK—rather, Book Equity ($B$) is an obsolete ruler. Purging working-capital accruals restores strong cross-sectional predictability.</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>EXECUTIVE TAKEAWAY:</strong> Value investing is not dead in the UK—rather, Book Equity ($B$) is an obsolete ruler. Purging working-capital accruals restores strong cross-sectional predictability.</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step active" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 01 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Press [N] for Speaker Script • [←/→] Navigate</div>
     </div>
 
@@ -587,7 +648,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 2: THE B/M FAILURE & LITERATURE LINEAGE
        ========================================== -->
-  <section class="slide" data-section="0">
+  
+
+<section class="slide" data-section="0">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 1 • THE VALUE PUZZLE & THEORETICAL LINEAGE</div>
@@ -608,10 +671,10 @@ window.MathJax = {
           <thead>
             <tr>
               <th>Portfolio / Metric</th>
-              <th class="num">High-1 (Long)</th>
+              <th class="num">High-1 (Value Long)</th>
               <th class="num">Decile 5</th>
-              <th class="num">Low-10 (Short)</th>
-              <th class="num">H–L Spread</th>
+              <th class="num">Low-10 (Growth Short)</th>
+              <th class="num">H–L Value Spread</th>
             </tr>
           </thead>
           <tbody>
@@ -619,49 +682,63 @@ window.MathJax = {
               <td><strong>Average $B/M$ Ratio</strong></td>
               <td class="num">2.212</td>
               <td class="num">0.636</td>
-              <td class="num">0.145</td>
-              <td class="num">+2.067</td>
+              <td class="num">0.066</td>
+              <td class="num">+2.146</td>
             </tr>
             <tr>
               <td><strong>Avg Market Cap ($B)</strong></td>
-              <td class="num">$0.326B</td>
-              <td class="num">$1.454B</td>
-              <td class="num">$2.681B</td>
-              <td class="num">Small vs Mega</td>
+              <td class="num">$0.532B</td>
+              <td class="num">$3.806B</td>
+              <td class="num">$9.146B</td>
+              <td class="num">Micro vs Mega</td>
             </tr>
             <tr>
-              <td><strong>Raw Monthly Return</strong></td>
-              <td class="num">0.858%* (1.81)</td>
-              <td class="num">0.541% (1.64)</td>
-              <td class="num">0.068% (0.17)</td>
-              <td class="num">0.790%** (2.31)</td>
+              <td><strong>Raw Monthly Return (%)</strong></td>
+              <td class="num">+0.150% (0.386)</td>
+              <td class="num">-0.038% (-0.107)</td>
+              <td class="num"><strong>-0.640%* (-1.670)</strong></td>
+              <td class="num"><strong>0.790%** (2.312)</strong></td>
             </tr>
             <tr class="highlight-row">
-              <td><strong>Excess Return ($\text{Ret} - R_f$)</strong></td>
-              <td class="num"><strong>+0.150% (0.39)</strong></td>
-              <td class="num">—</td>
-              <td class="num"><strong>-0.640%* (-1.69)</strong></td>
-              <td class="num"><strong>0.790%** (2.31)</strong></td>
+              <td><strong>CAPM Risk-Adjusted $lpha$</strong></td>
+              <td class="num">0.143% (0.346)</td>
+              <td class="num">0.008% (0.032)</td>
+              <td class="num">-0.680%*** (-3.119)</td>
+              <td class="num">0.622%*** (3.041)</td>
             </tr>
             <tr>
-              <td><strong>FF3 Risk-Adjusted $\alpha$</strong></td>
-              <td class="num">-0.028% (-0.23)</td>
-              <td class="num">-0.151% (-1.64)</td>
-              <td class="num">-0.256%** (-2.33)</td>
-              <td class="num">0.228%* (1.69)</td>
+              <td><strong>FF 3-Factor Risk-Adjusted $lpha$</strong></td>
+              <td class="num">0.114% (0.311)</td>
+              <td class="num">0.005% (0.116)</td>
+              <td class="num">-0.461* (-1.805)</td>
+              <td class="num">0.459*** (2.934)</td>
             </tr>
             <tr>
-              <td><strong>Fletcher ($\text{NSI}$) 5-Factor $\alpha$</strong></td>
-              <td class="num">-0.044% (-0.34)</td>
-              <td class="num">-0.056% (-0.61)</td>
-              <td class="num">-0.352%*** (-2.91)</td>
-              <td class="num">0.307%* (1.81)</td>
+              <td><strong>FF 5-Factor Risk-Adjusted $lpha$</strong></td>
+              <td class="num">0.104% (0.413)</td>
+              <td class="num">-0.003% (-0.138)</td>
+              <td class="num">-0.456* (-1.772)</td>
+              <td class="num">0.431** (2.432)</td>
+            </tr>
+            <tr class="navy-row">
+              <td><strong>FF 6-Factor Risk-Adjusted $lpha$</strong></td>
+              <td class="num">0.043% (0.171)</td>
+              <td class="num">-0.002% (-0.121)</td>
+              <td class="num">-0.416 (-1.584)</td>
+              <td class="num">0.357*** (2.153)</td>
+            </tr>
+            <tr>
+              <td><strong>Fletcher et al. (2024) 5-Factor $lpha$</strong></td>
+              <td class="num">0.065% (0.225)</td>
+              <td class="num">-0.004% (-0.374)</td>
+              <td class="num">-0.214 (-1.233)</td>
+              <td class="num">0.258** (2.034)</td>
             </tr>
           </tbody>
         </table>
         <div class="panel-burgundy" style="margin-top:0.65rem; font-size:0.77rem; line-height:1.4;">
           <strong>Critical Discovery in Table 3 & 4:</strong>
-          1) The $B/M$ Long leg excess return is a statistically dead <strong>$+0.150\%$/mo ($t = 0.386$)</strong>, and its FF3/Fletcher alphas are actually <strong>negative ($-0.028\%$ to $-0.044\%$)</strong>!<br>
+          1) The $B/M$ Long leg excess return is a statistically dead <strong>$+0.150\%$/mo ($t = 0.386$)</strong>, and its FF6/Fletcher alphas are near zero (<strong>$0.043\%$ to $0.065\%$, $t < 0.23$</strong>)!<br>
           2) Over <strong>81%</strong> of $B/M$'s historical spread ($0.640\% / 0.790\%$) came from shorting Decile 10. For Long-Only investors, $B/M$ delivered zero value.
         </div>
       </div>
@@ -691,8 +768,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>CORE INSIGHT:</strong> Traditional High-$B/M$ firms in the UK are tiny ($\text{Avg Cap} = \$326\text{M}$) "value traps" with negative FF3 alpha. Purging accruals separates cash generators from accounting mirages.</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>CORE INSIGHT:</strong> Traditional High-$B/M$ firms in the UK are tiny ($\text{Avg Cap} = \$326\text{M}$) "value traps" with negative FF3 alpha. Purging accruals separates cash generators from accounting mirages.</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step active" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 02 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 2 / 11</div>
     </div>
 
@@ -706,7 +805,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 3: ACCOUNTING CONSTRUCT & DATA DESIGN
        ========================================== -->
-  <section class="slide" data-section="1">
+  
+
+<section class="slide" data-section="1">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 2 • THE CBOP/M CONSTRUCT & DATA ARCHITECTURE</div>
@@ -745,65 +846,82 @@ window.MathJax = {
               <th>Asset Pricing Factor</th>
               <th class="num">Mean (%/mo)</th>
               <th class="num">Std Dev (%)</th>
-              <th class="num">$t\text{-stat}$</th>
-              <th class="num">Corr($\text{NVF}$)</th>
-              <th class="num">Corr($\text{HML}$)</th>
+              <th class="num">Min (%)</th>
+              <th class="num">Max (%)</th>
+              <th class="num">Corr($	ext{NVF}$)</th>
+              <th class="num">Corr($	ext{HML}$)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>$R_m - R_f$ (Market)</strong></td>
-              <td class="num">0.453%</td>
-              <td class="num">3.924%</td>
-              <td class="num">2.155**</td>
-              <td class="num">-0.095</td>
-              <td class="num">0.145</td>
+              <td class="num">0.212%</td>
+              <td class="num">3.913%</td>
+              <td class="num">-15.412%</td>
+              <td class="num">12.427%</td>
+              <td class="num">0.153</td>
+              <td class="num">0.371</td>
             </tr>
             <tr>
-              <td><strong>$\text{SMB}_{\text{NVF}}$ (Size)</strong></td>
-              <td class="num">0.119%</td>
-              <td class="num">3.164%</td>
-              <td class="num">0.701</td>
-              <td class="num">-0.071</td>
-              <td class="num">-0.044</td>
+              <td><strong>$	ext{SMB}$ (Size)</strong></td>
+              <td class="num">0.138%*</td>
+              <td class="num">1.342%</td>
+              <td class="num">-5.410%</td>
+              <td class="num">5.308%</td>
+              <td class="num">0.159</td>
+              <td class="num">0.350</td>
             </tr>
             <tr>
-              <td><strong>$\text{HML}$ (Conventional $B/M$)</strong></td>
-              <td class="num">0.273%</td>
-              <td class="num">3.679%</td>
-              <td class="num">1.384</td>
+              <td><strong>$	ext{HML}$ (Conventional $B/M$)</strong></td>
+              <td class="num">0.279%**</td>
+              <td class="num">1.556%</td>
+              <td class="num">-4.969%</td>
+              <td class="num">6.086%</td>
               <td class="num">0.461</td>
               <td class="num">1.000</td>
             </tr>
             <tr>
-              <td><strong>$\text{RMW}$ (Profitability)</strong></td>
+              <td><strong>$	ext{RMW}$ (Profitability)</strong></td>
               <td class="num">0.234%</td>
-              <td class="num">2.625%</td>
-              <td class="num">1.662*</td>
-              <td class="num">0.076</td>
-              <td class="num">-0.335</td>
+              <td class="num">4.167%</td>
+              <td class="num">-16.295%</td>
+              <td class="num">11.606%</td>
+              <td class="num">0.018</td>
+              <td class="num">-0.201</td>
             </tr>
             <tr>
-              <td><strong>$\text{CMA}$ (Asset Growth)</strong></td>
-              <td class="num">0.171%</td>
-              <td class="num">2.238%</td>
-              <td class="num">1.425</td>
-              <td class="num">0.323</td>
-              <td class="num">0.460</td>
+              <td><strong>$	ext{CMA}$ (Investment)</strong></td>
+              <td class="num">0.318%</td>
+              <td class="num">3.960%</td>
+              <td class="num">-13.656%</td>
+              <td class="num">13.012%</td>
+              <td class="num">-0.119</td>
+              <td class="num">-0.184</td>
             </tr>
             <tr>
-              <td><strong>$\text{WML}$ (Momentum)</strong></td>
-              <td class="num">0.916%</td>
-              <td class="num">4.570%</td>
-              <td class="num">3.736***</td>
-              <td class="num"><strong>+0.036</strong></td>
-              <td class="num"><strong>-0.440</strong></td>
+              <td><strong>$	ext{WML}$ (Momentum)</strong></td>
+              <td class="num">0.639%***</td>
+              <td class="num">3.475%</td>
+              <td class="num">-17.576%</td>
+              <td class="num">12.086%</td>
+              <td class="num">0.072</td>
+              <td class="num">-0.259</td>
+            </tr>
+            <tr>
+              <td><strong>$	ext{FIN}$ (Behavioral Financing)</strong></td>
+              <td class="num">0.786%***</td>
+              <td class="num">2.287%</td>
+              <td class="num">-11.200%</td>
+              <td class="num">9.295%</td>
+              <td class="num">0.240</td>
+              <td class="num">0.132</td>
             </tr>
             <tr class="highlight-row">
-              <td><strong>$\text{NVF}$ ($\text{CBOP}/M$ Factor)</strong></td>
-              <td class="num"><strong>0.692%</strong></td>
-              <td class="num"><strong>2.905%</strong></td>
-              <td class="num"><strong>4.442***</strong></td>
+              <td><strong>$	ext{NVF}$ ($	ext{CBOP}/M$ Factor)</strong></td>
+              <td class="num"><strong>0.831%***</strong></td>
+              <td class="num"><strong>2.463%</strong></td>
+              <td class="num"><strong>-6.023%</strong></td>
+              <td class="num"><strong>12.078%</strong></td>
               <td class="num"><strong>1.000</strong></td>
               <td class="num"><strong>0.461</strong></td>
             </tr>
@@ -817,8 +935,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>DESIGN TAKEAWAY:</strong> $\text{NVF} = \frac{1}{2}(\text{SH} + \text{BH}) - \frac{1}{2}(\text{SL} + \text{BL})$ achieves an annualized Sharpe Ratio of $\approx 0.82$ before costs, outperforming even UK Momentum ($t=4.442$ vs $3.736$).</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>DESIGN TAKEAWAY:</strong> $\text{NVF} = \frac{1}{2}(\text{SH} + \text{BH}) - \frac{1}{2}(\text{SL} + \text{BL})$ achieves an annualized Sharpe Ratio of $\approx 0.82$ before costs, outperforming even UK Momentum ($t=4.442$ vs $3.736$).</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step active" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 03 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 3 / 11</div>
     </div>
 
@@ -832,14 +972,16 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 4: ECONOMETRIC METHODOLOGY
        ========================================== -->
-  <section class="slide" data-section="1">
+  
+
+<section class="slide" data-section="1">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 2 • ECONOMETRIC TESTING ARCHITECTURE</div>
         <h1 class="slide-title">Four-Pillar Falsification Framework: Time-Series, Cross-Section & Frontier Tests</h1>
       </div>
       <div class="header-meta">
-        <div>Section 3.2 & Section 4 • Pages 5–7, 14–18</div>
+        <div>Section 3.3, 4.3 & 5 • Pages 5–7, 14–18</div>
       </div>
     </div>
 
@@ -851,10 +993,10 @@ window.MathJax = {
         </div>
         <div class="formula-box" style="font-size:0.76rem;">
           $$\text{FF6: } R_{p,t} - R_{f,t} = \alpha_p + \beta_1(R_{m,t}-R_{f,t}) + \beta_2\text{SMB}_t + \beta_3\text{HML}_t + \beta_4\text{RMW}_t + \beta_5\text{CMA}_t + \beta_6\text{WML}_t + \varepsilon_{p,t}$$
-          $$\text{Fletcher (2021): } R_{p,t} - R_{f,t} = \alpha_p + \beta_1\text{MKT}_t + \beta_2\text{SMB}_t + \beta_3\text{HML}_t + \beta_4\text{WML}_t + \beta_5\text{INV}_t + \varepsilon_{p,t}$$
+          $$\text{Fletcher et al. (2024): } R_{p,t} - R_{f,t} = \alpha_p + \beta_1\text{MKT}_t + \beta_2\text{SMB}_t + \beta_3\text{HML}_t + \beta_4\text{WML}_t + \beta_5\text{INV}_t + \varepsilon_{p,t}$$
         </div>
         <div style="font-size:0.76rem; color:var(--ink-muted); line-height:1.42;">
-          • <strong>Why Fletcher (2021) for the UK?</strong> In UK equities, asset growth ($\text{CMA}$) is weak ($t=1.425$). Fletcher replaces $\text{RMW}$ and $\text{CMA}$ with financing-based investment factors: <strong>Composite Share Issuance ($\text{CSI}$)</strong> and <strong>Net Share Issuance ($\text{NSI}$)</strong>.<br>
+          • <strong>Why Fletcher et al. (2024) for the UK?</strong> In UK equities, asset growth ($\text{CMA}$) is weak ($t=1.425$). Fletcher replaces $\text{RMW}$ and $\text{CMA}$ with financing-based investment factors: <strong>Composite Share Issuance ($\text{CSI}$)</strong> and <strong>Net Share Issuance ($\text{NSI}$)</strong>.<br>
           • <strong>Decision Rule:</strong> If $\alpha_{\text{High}-\text{Low}} > 0$ and $t(\alpha) > 2.58$, abnormal return cannot be explained by existing risk premia.
         </div>
 
@@ -897,8 +1039,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>METHODOLOGICAL RIGOR:</strong> Each econometric test addresses a distinct dimension—Portfolio Alpha (Pillar 1), Factor Redundancy (Pillar 2), Stock-Level Risk Premia (Pillar 3), and Joint Frontier Fit (Pillar 4).</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>METHODOLOGICAL RIGOR:</strong> Each econometric test addresses a distinct dimension—Portfolio Alpha (Pillar 1), Factor Redundancy (Pillar 2), Stock-Level Risk Premia (Pillar 3), and Joint Frontier Fit (Pillar 4).</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step active" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 04 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 4 / 11</div>
     </div>
 
@@ -912,7 +1076,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 5: EMPIRICAL RESULTS I (TABLES 6 & 7)
        ========================================== -->
-  <section class="slide" data-section="2">
+  
+
+<section class="slide" data-section="2">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 3 • EMPIRICAL PROOFS (PORTFOLIO SORTS & MULTI-FACTOR ALPHAS)</div>
@@ -931,22 +1097,27 @@ window.MathJax = {
           <span class="badge badge-sig">50/50 CONTRIBUTION</span>
         </div>
         <svg viewBox="0 0 340 190" style="width:100%; height:auto;">
-          <line x1="35" y1="125" x2="330" y2="125" stroke="#181818" stroke-width="1"/>
-          <!-- Risk Free Rate line (0.452%) -->
-          <line x1="35" y1="92" x2="330" y2="92" stroke="#7C2529" stroke-dasharray="3,3" stroke-width="1"/>
-          <text x="328" y="88" font-size="7.5" fill="#7C2529" text-anchor="end">Risk-Free Rate Rf = 0.452%</text>
-          <!-- 10 Decile Bars: 1.036, 1.084, 0.903, 0.946, 0.888, 0.722, 0.594, 0.601, 0.578, -0.140 -->
-          <rect x="42" y="48" width="20" height="77" fill="#1E3A5F"/><text x="52" y="44" font-size="7.5" font-weight="bold" text-anchor="middle">1.04</text><text x="52" y="136" font-size="8" text-anchor="middle">D1</text>
-          <rect x="70" y="44" width="20" height="81" fill="#3A587A"/><text x="80" y="40" font-size="7.5" text-anchor="middle">1.08</text><text x="80" y="136" font-size="8" text-anchor="middle">D2</text>
-          <rect x="98" y="58" width="20" height="67" fill="#4E6B8C"/><text x="108" y="54" font-size="7.5" text-anchor="middle">0.90</text><text x="108" y="136" font-size="8" text-anchor="middle">D3</text>
-          <rect x="126" y="55" width="20" height="70" fill="#4E6B8C"/><text x="136" y="51" font-size="7.5" text-anchor="middle">0.95</text><text x="136" y="136" font-size="8" text-anchor="middle">D4</text>
-          <rect x="154" y="59" width="20" height="66" fill="#68829E"/><text x="164" y="55" font-size="7.5" text-anchor="middle">0.89</text><text x="164" y="136" font-size="8" text-anchor="middle">D5</text>
-          <rect x="182" y="71" width="20" height="54" fill="#7E94AB"/><text x="192" y="67" font-size="7.5" text-anchor="middle">0.72</text><text x="192" y="136" font-size="8" text-anchor="middle">D6</text>
-          <rect x="210" y="81" width="20" height="44" fill="#95A7BA"/><text x="220" y="77" font-size="7.5" text-anchor="middle">0.59</text><text x="220" y="136" font-size="8" text-anchor="middle">D7</text>
-          <rect x="238" y="80" width="20" height="45" fill="#95A7BA"/><text x="248" y="76" font-size="7.5" text-anchor="middle">0.60</text><text x="248" y="136" font-size="8" text-anchor="middle">D8</text>
-          <rect x="266" y="82" width="20" height="43" fill="#AEBCCE"/><text x="276" y="78" font-size="7.5" text-anchor="middle">0.58</text><text x="276" y="136" font-size="8" text-anchor="middle">D9</text>
-          <rect x="294" y="125" width="20" height="14" fill="#7C2529"/><text x="304" y="150" font-size="7.5" font-weight="bold" fill="#7C2529" text-anchor="middle">-0.14</text><text x="304" y="121" font-size="8" text-anchor="middle">D10</text>
-          <text x="175" y="175" font-size="8.5" font-weight="bold" fill="#181818" text-anchor="middle">Long Excess (D1 - Rf) = +0.584%*** (t=2.67) | Short Excess (D10 - Rf) = -0.592%* (t=-1.79)</text>
+          <line x1="30" y1="115" x2="330" y2="115" stroke="#181818" stroke-width="1.2"/>
+          <!-- Grid lines -->
+          <line x1="30" y1="55" x2="330" y2="55" stroke="#DDD" stroke-dasharray="3,3"/>
+          <line x1="30" y1="175" x2="330" y2="175" stroke="#DDD" stroke-dasharray="3,3"/>
+          <text x="26" y="58" font-size="7.5" text-anchor="end" fill="#555">+0.6%</text>
+          <text x="26" y="118" font-size="7.5" text-anchor="end" fill="#181818" font-weight="bold">0.0%</text>
+          <text x="26" y="178" font-size="7.5" text-anchor="end" fill="#555">-0.6%</text>
+
+          <!-- 10 Deciles: +0.584, +0.349, +0.323, +0.296, +0.227, +0.216, -0.008, -0.540, -0.570, -0.592 -->
+          <!-- Scale: 100px per 1.0%, so 0.6% = 60px -->
+          <rect x="36" y="56.6" width="22" height="58.4" fill="#1E3A5F"/><text x="47" y="52" font-size="7.2" font-weight="bold" fill="#1E3A5F" text-anchor="middle">+0.58</text><text x="47" y="127" font-size="7.5" text-anchor="middle">D1</text>
+          <rect x="65" y="80.1" width="22" height="34.9" fill="#2E527A"/><text x="76" y="75" font-size="7.2" text-anchor="middle">+0.35</text><text x="76" y="127" font-size="7.5" text-anchor="middle">D2</text>
+          <rect x="94" y="82.7" width="22" height="32.3" fill="#3E6A95"/><text x="105" y="78" font-size="7.2" text-anchor="middle">+0.32</text><text x="105" y="127" font-size="7.5" text-anchor="middle">D3</text>
+          <rect x="123" y="85.4" width="22" height="29.6" fill="#5282B0"/><text x="134" y="80" font-size="7.2" text-anchor="middle">+0.30</text><text x="134" y="127" font-size="7.5" text-anchor="middle">D4</text>
+          <rect x="152" y="92.3" width="22" height="22.7" fill="#699AC8"/><text x="163" y="87" font-size="7.2" text-anchor="middle">+0.23</text><text x="163" y="127" font-size="7.5" text-anchor="middle">D5</text>
+          <rect x="181" y="93.4" width="22" height="21.6" fill="#84B1DD"/><text x="192" y="88" font-size="7.2" text-anchor="middle">+0.22</text><text x="192" y="127" font-size="7.5" text-anchor="middle">D6</text>
+          <rect x="210" y="115" width="22" height="1.0" fill="#999"/><text x="221" y="111" font-size="7.2" text-anchor="middle">-0.01</text><text x="221" y="127" font-size="7.5" text-anchor="middle">D7</text>
+          <rect x="239" y="115" width="22" height="54.0" fill="#B35D62"/><text x="250" y="177" font-size="7.2" text-anchor="middle" fill="#7C2529">-0.54</text><text x="250" y="108" font-size="7.5" text-anchor="middle">D8</text>
+          <rect x="268" y="115" width="22" height="57.0" fill="#9C383E"/><text x="279" y="180" font-size="7.2" text-anchor="middle" fill="#7C2529">-0.57</text><text x="279" y="108" font-size="7.5" text-anchor="middle">D9</text>
+          <rect x="297" y="115" width="22" height="59.2" fill="#7C2529"/><text x="308" y="183" font-size="7.2" font-weight="bold" text-anchor="middle" fill="#7C2529">-0.59</text><text x="308" y="108" font-size="7.5" text-anchor="middle">D10</text>
+          <text x="180" y="145" font-size="8.5" font-weight="bold" fill="#181818" text-anchor="middle">Long Leg (D1) = +0.584%** (t=2.39) | Short Leg (D10) = -0.592%** (t=-2.10)</text>
         </svg>
         <div class="panel-navy" style="font-size:0.75rem; line-height:1.4;">
           <strong>Double-Sort on Size & Value (Table 5 vs Table 8):</strong><br>
@@ -969,13 +1140,13 @@ window.MathJax = {
               <th class="num">Decile 2</th>
               <th class="num">Decile 5</th>
               <th class="num">Low-10 (Short)</th>
-              <th class="num">$\text{CBOP}/M$ (H–L)</th>
+              <th class="num">$	ext{CBOP}/M$ (H–L)</th>
               <th class="num">vs. $B/M$ (H–L)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Average $\text{CBOP}/M$</strong></td>
+              <td><strong>Average $	ext{CBOP}/M$</strong></td>
               <td class="num">+0.928</td>
               <td class="num">+0.275</td>
               <td class="num">+0.101</td>
@@ -985,83 +1156,96 @@ window.MathJax = {
             </tr>
             <tr>
               <td><strong>Average Market Cap ($B)</strong></td>
-              <td class="num">$0.958B</td>
-              <td class="num">$1.471B</td>
-              <td class="num">$2.752B</td>
+              <td class="num">$4.358B</td>
+              <td class="num">$4.185B</td>
+              <td class="num">$4.663B</td>
               <td class="num">$1.598B</td>
-              <td class="num">—</td>
-              <td class="num">D1: $0.326B</td>
+              <td class="num">$2.760B</td>
+              <td class="num">D1: $0.532B</td>
             </tr>
             <tr class="navy-row">
-              <td><strong>Raw Monthly Return</strong></td>
-              <td class="num">1.036%*** (3.73)</td>
-              <td class="num">1.084%*** (4.10)</td>
-              <td class="num">0.888%*** (3.58)</td>
-              <td class="num">-0.140% (-0.38)</td>
+              <td><strong>Raw Monthly Return (%)</strong></td>
+              <td class="num"><strong>+0.584%** (2.39)</strong></td>
+              <td class="num">0.349%* (1.66)</td>
+              <td class="num">0.227% (1.03)</td>
+              <td class="num"><strong>-0.592%** (-2.10)</strong></td>
               <td class="num"><strong>1.175%*** (3.62)</strong></td>
               <td class="num">0.790%** (2.31)</td>
             </tr>
             <tr>
-              <td><strong>CAPM $\alpha$</strong></td>
-              <td class="num">0.278%*** (3.11)</td>
-              <td class="num">0.336%*** (3.94)</td>
-              <td class="num">0.144%* (1.92)</td>
-              <td class="num">-0.640%*** (-3.18)</td>
-              <td class="num"><strong>0.917%*** (3.64)</strong></td>
-              <td class="num">0.713%** (2.09)</td>
+              <td><strong>CAPM Risk-Adjusted $lpha$</strong></td>
+              <td class="num">0.511%*** (2.60)</td>
+              <td class="num">0.316%** (2.18)</td>
+              <td class="num">0.196% (1.44)</td>
+              <td class="num">-0.494%*** (-2.63)</td>
+              <td class="num"><strong>0.917%*** (4.01)</strong></td>
+              <td class="num">0.622%*** (3.04)</td>
             </tr>
             <tr>
-              <td><strong>Fama-French 3-Factor $\alpha$</strong></td>
-              <td class="num">0.207%** (2.50)</td>
-              <td class="num">0.295%*** (3.50)</td>
-              <td class="num">0.163%** (2.17)</td>
-              <td class="num">-0.325%*** (-3.00)</td>
-              <td class="num"><strong>0.532%*** (2.91)</strong></td>
-              <td class="num">0.228%* (1.69)</td>
+              <td><strong>FF 3-Factor $lpha$</strong></td>
+              <td class="num">0.434%** (2.52)</td>
+              <td class="num">0.268%* (1.91)</td>
+              <td class="num">0.153% (0.82)</td>
+              <td class="num">-0.453%** (-2.40)</td>
+              <td class="num"><strong>0.867%*** (3.59)</strong></td>
+              <td class="num">0.459*** (2.93)</td>
             </tr>
             <tr>
-              <td><strong>Fama-French 5-Factor $\alpha$</strong></td>
-              <td class="num">0.181%** (2.15)</td>
-              <td class="num">0.249%*** (2.86)</td>
-              <td class="num">0.123%* (1.66)</td>
-              <td class="num">-0.415%*** (-3.51)</td>
-              <td class="num"><strong>0.596%*** (3.18)</strong></td>
-              <td class="num">0.412%** (2.50)</td>
+              <td><strong>FF 5-Factor $lpha$</strong></td>
+              <td class="num">0.380%** (2.34)</td>
+              <td class="num">0.250%* (1.79)</td>
+              <td class="num">0.112% (0.63)</td>
+              <td class="num">-0.338%** (-2.08)</td>
+              <td class="num"><strong>0.716%*** (3.12)</strong></td>
+              <td class="num">0.431** (2.43)</td>
             </tr>
             <tr class="highlight-row">
-              <td><strong>Fama-French 6-Factor $\alpha$</strong></td>
-              <td class="num"><strong>0.219%** (2.56)</strong></td>
-              <td class="num"><strong>0.268%*** (3.08)</strong></td>
-              <td class="num"><strong>0.146%** (1.98)</strong></td>
-              <td class="num"><strong>-0.388%*** (-3.16)</strong></td>
-              <td class="num"><strong>0.606%*** (3.25)</strong></td>
-              <td class="num">0.353%** (1.98)</td>
+              <td><strong>FF 6-Factor $lpha$</strong></td>
+              <td class="num"><strong>0.359%** (2.13)</strong></td>
+              <td class="num">0.231% (1.43)</td>
+              <td class="num">0.070% (0.30)</td>
+              <td class="num"><strong>-0.257%** (-1.97)</strong></td>
+              <td class="num"><strong>0.606%*** (2.73)</strong></td>
+              <td class="num">0.357*** (2.15)</td>
             </tr>
             <tr>
-              <td><strong>Fletcher 5-Factor ($\text{CSI}$) $\alpha$</strong></td>
-              <td class="num">0.264%*** (2.97)</td>
-              <td class="num">0.296%*** (3.37)</td>
-              <td class="num">0.167%** (2.16)</td>
-              <td class="num">-0.311%** (-2.37)</td>
-              <td class="num"><strong>0.576%*** (3.08)</strong></td>
-              <td class="num">0.311%* (1.86)</td>
-            </tr>
-            <tr>
-              <td><strong>Fletcher 5-Factor ($\text{NSI}$) $\alpha$</strong></td>
-              <td class="num">0.258%*** (2.93)</td>
-              <td class="num">0.311%*** (3.55)</td>
-              <td class="num">0.175%** (2.26)</td>
-              <td class="num">-0.296%** (-2.29)</td>
-              <td class="num"><strong>0.554%*** (2.95)</strong></td>
-              <td class="num">0.307%* (1.81)</td>
+              <td><strong>Fletcher et al. (2024) 5-Factor $lpha$</strong></td>
+              <td class="num"><strong>0.313%** (2.02)</strong></td>
+              <td class="num">0.216% (1.37)</td>
+              <td class="num">0.043% (0.56)</td>
+              <td class="num"><strong>-0.245%* (-1.94)</strong></td>
+              <td class="num"><strong>0.532%** (2.46)</strong></td>
+              <td class="num">0.258** (2.03)</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>EMPIRICAL PROOF #1:</strong> Even after controlling for Market, Size, conventional Value ($\text{HML}$), Profitability ($\text{RMW}$), Investment ($\text{CMA}/\text{CSI}/\text{NSI}$), and Momentum ($\text{WML}$), the $\text{CBOP}/M$ spread yields $0.53\%–0.92\%$/mo ($p < 0.01$).</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>EMPIRICAL PROOF #1:</strong> Even after controlling for Market, Size, conventional Value ($\text{HML}$), Profitability ($\text{RMW}$), Investment ($\text{CMA}/\text{CSI}/\text{NSI}$), and Momentum ($\text{WML}$), the $\text{CBOP}/M$ spread yields $0.53\%–0.92\%$/mo ($p < 0.01$).</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step active" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 05 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 5 / 11</div>
     </div>
 
@@ -1075,7 +1259,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 6: SPANNING, FAMA-MACBETH & GRS (TABLES 9, 10, 12)
        ========================================== -->
-  <section class="slide" data-section="2">
+  
+
+<section class="slide" data-section="2">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 3 • EMPIRICAL PROOFS (SPANNING, CROSS-SECTION & GRS EFFICIENCY)</div>
@@ -1096,69 +1282,51 @@ window.MathJax = {
         <table class="quant-table">
           <thead>
             <tr>
-              <th>Dep. Variable</th>
+              <th>Dep. Factor</th>
               <th class="num">Intercept $\alpha$</th>
-              <th class="num">$\text{HML}$ / $\text{NVF}$</th>
-              <th class="num">$\text{RMW}$</th>
-              <th class="num">$\text{CMA}$</th>
-              <th class="num">$\text{WML}$</th>
+              <th class="num">Loading on $\text{HML}$</th>
+              <th class="num">Loading on $\text{NVF}$</th>
+              <th class="num">Loading on $\text{FIN}$</th>
+              <th class="num">Loading on $\text{SMB}$</th>
               <th class="num">Adj. $R^2$</th>
             </tr>
           </thead>
           <tbody>
             <tr class="highlight-row">
-              <td><strong>(1) $\text{NVF}_t$ (FF6)</strong></td>
-              <td class="num"><strong>0.358%** (2.34)</strong></td>
-              <td class="num">0.440*** (9.50)</td>
-              <td class="num">+0.251*** (4.67)</td>
-              <td class="num">+0.181** (2.56)</td>
-              <td class="num">+0.175*** (5.38)</td>
-              <td class="num">34.4%</td>
-            </tr>
-            <tr>
-              <td><strong>(2) $\text{NVF}_t$ (CSI)</strong></td>
-              <td class="num"><strong>0.391%** (2.43)</strong></td>
-              <td class="num">0.451*** (9.74)</td>
+              <td><strong>$\text{NVF}$ on 7 Factors</strong></td>
+              <td class="num"><strong>0.358%** (2.344)</strong></td>
+              <td class="num"><strong>0.388*** (5.003)</strong></td>
               <td class="num">—</td>
-              <td class="num">0.088* (1.69)</td>
-              <td class="num">+0.159*** (4.67)</td>
-              <td class="num">29.4%</td>
-            </tr>
-            <tr>
-              <td><strong>(3) $\text{NVF}_t$ (NSI)</strong></td>
-              <td class="num"><strong>0.371%** (2.32)</strong></td>
-              <td class="num">0.440*** (9.59)</td>
-              <td class="num">—</td>
-              <td class="num">0.123** (2.17)</td>
-              <td class="num">+0.155*** (4.58)</td>
-              <td class="num">29.8%</td>
+              <td class="num">0.265*** (3.682)</td>
+              <td class="num">0.086** (2.310)</td>
+              <td class="num">36.8%</td>
             </tr>
             <tr class="navy-row">
-              <td><strong>(4) $\text{HML}_t$ (FF6)</strong></td>
-              <td class="num"><strong>-0.130% (-1.22)</strong></td>
-              <td class="num">0.506*** (9.50)</td>
-              <td class="num">-0.258*** (-4.42)</td>
-              <td class="num">+0.401*** (5.58)</td>
-              <td class="num">-0.299*** (-9.43)</td>
-              <td class="num">54.4%</td>
+              <td><strong>$\text{HML}$ on 7 Factors</strong></td>
+              <td class="num"><strong>0.081% (0.789)</strong></td>
+              <td class="num">—</td>
+              <td class="num"><strong>0.256*** (4.744)</strong></td>
+              <td class="num">0.150 (1.158)</td>
+              <td class="num">-0.047 (-0.663)</td>
+              <td class="num">32.3%</td>
             </tr>
             <tr>
-              <td><strong>(5) $\text{HML}_t$ (CSI)</strong></td>
-              <td class="num"><strong>-0.122% (-0.84)</strong></td>
-              <td class="num">0.491*** (9.74)</td>
+              <td><strong>$\text{SMB}$ on 7 Factors</strong></td>
+              <td class="num">0.110 (1.361)</td>
+              <td class="num">0.038 (0.156)</td>
+              <td class="num">0.292** (2.153)</td>
+              <td class="num">0.432*** (4.619)</td>
               <td class="num">—</td>
-              <td class="num">0.292*** (5.58)</td>
-              <td class="num">-0.300*** (-9.06)</td>
-              <td class="num">47.7%</td>
+              <td class="num">36.9%</td>
             </tr>
             <tr>
-              <td><strong>(6) $\text{HML}_t$ (NSI)</strong></td>
-              <td class="num"><strong>-0.068% (-0.46)</strong></td>
-              <td class="num">0.487*** (9.59)</td>
+              <td><strong>$\text{FIN}$ on 7 Factors</strong></td>
+              <td class="num">0.412*** (2.994)</td>
+              <td class="num">0.140 (0.829)</td>
+              <td class="num">0.335*** (3.863)</td>
               <td class="num">—</td>
-              <td class="num">0.246*** (4.16)</td>
-              <td class="num">-0.305*** (-9.03)</td>
-              <td class="num">45.9%</td>
+              <td class="num">0.162*** (5.114)</td>
+              <td class="num">41.9%</td>
             </tr>
           </tbody>
         </table>
@@ -1186,27 +1354,33 @@ window.MathJax = {
             <tbody>
               <tr>
                 <td><strong>$\lambda_{\text{HML}}$ (Book-to-Market)</strong></td>
-                <td class="num">0.252%** (t = 2.092)</td>
+                <td class="num">0.205%** (t = 2.113)</td>
                 <td class="num">—</td>
                 <td class="num"><span class="badge badge-fail">0.113% (t = 1.576)</span></td>
               </tr>
               <tr class="highlight-row">
                 <td><strong>$\lambda_{\text{NVF}}$ (New Value Factor)</strong></td>
                 <td class="num">—</td>
+                <td class="num"><strong>0.471%*** (t = 4.618)</strong></td>
                 <td class="num"><strong>0.466%*** (t = 4.323)</strong></td>
-                <td class="num"><strong>0.378%*** (t = 3.285)</strong></td>
               </tr>
               <tr>
                 <td><strong>$\lambda_{\text{WML}}$ (Momentum)</strong></td>
-                <td class="num">0.353%** (t = 2.521)</td>
-                <td class="num">0.374%*** (t = 2.671)</td>
-                <td class="num">0.375%*** (t = 2.660)</td>
+                <td class="num">0.426%*** (t = 2.933)</td>
+                <td class="num">0.400%*** (t = 2.961)</td>
+                <td class="num">0.413%*** (t = 2.909)</td>
               </tr>
               <tr>
-                <td><strong>$\lambda_{\text{RMW}}$ (Gross Margin Proxy)</strong></td>
-                <td class="num">0.056% (t = 0.644)</td>
-                <td class="num">0.019% (t = 0.218)</td>
-                <td class="num">0.022% (t = 0.253)</td>
+                <td><strong>$\lambda_{\text{FIN}}$ (Behavioral Financing)</strong></td>
+                <td class="num">0.532%*** (t = 4.081)</td>
+                <td class="num">0.431%*** (t = 3.691)</td>
+                <td class="num">0.408%*** (t = 3.115)</td>
+              </tr>
+              <tr>
+                <td><strong>$\lambda_{\text{SMB}}$ (Size)</strong></td>
+                <td class="num">0.187%** (t = 2.246)</td>
+                <td class="num">0.197%** (t = 2.322)</td>
+                <td class="num">0.205%** (t = 2.259)</td>
               </tr>
             </tbody>
           </table>
@@ -1229,9 +1403,9 @@ window.MathJax = {
             <tbody>
               <tr>
                 <td><strong>Fama-French 3-Factor</strong></td>
-                <td class="num">1.751 (p = 0.016)</td>
-                <td class="num"><strong>1.551 (p = 0.048)</strong></td>
-                <td class="num">Pricing error reduced by 11.4%</td>
+                <td class="num">1.934 (p = 0.006)</td>
+                <td class="num"><strong>1.668 (p = 0.027)</strong></td>
+                <td class="num">Pricing error reduced by 13.8%</td>
               </tr>
               <tr class="highlight-row">
                 <td><strong>Fama-French 5-Factor</strong></td>
@@ -1241,15 +1415,15 @@ window.MathJax = {
               </tr>
               <tr>
                 <td><strong>Fama-French 6-Factor</strong></td>
-                <td class="num">1.976 (p = 0.004)</td>
-                <td class="num"><strong>1.484 (p = 0.067)</strong></td>
-                <td class="num"><span class="badge badge-sig">Passes at 5% level (p > 0.05)!</span></td>
+                <td class="num">1.424 (p = 0.092)</td>
+                <td class="num"><strong>1.090 (p = 0.354)</strong></td>
+                <td class="num"><span class="badge badge-sig">Passes at 5% level (p > 0.35)!</span></td>
               </tr>
-              <tr>
-                <td><strong>Fletcher ($\text{CSI}$ / $\text{NSI}$)</strong></td>
-                <td class="num">2.033 / 2.024 (0.003)</td>
-                <td class="num"><strong>1.703 / 1.662 (0.028)</strong></td>
-                <td class="num">Consistent GRS reduction</td>
+              <tr class="highlight-row">
+                <td><strong>Fletcher et al. (2024) 5-Factor</strong></td>
+                <td class="num">1.208 (p = 0.232)</td>
+                <td class="num"><strong>0.923 (p = 0.620)</strong></td>
+                <td class="num"><span class="badge badge-sig">Best UK Model (GRS &lt; 1.0, p = 0.62)!</span></td>
               </tr>
             </tbody>
           </table>
@@ -1257,8 +1431,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>EMPIRICAL PROOF #2:</strong> In a direct stock-level horse race (Table 10, Model 3), $\text{NVF}$ knocks out $\text{HML}$ ($t=3.285$ vs $1.576$) and enables FF5/FF6 to pass the GRS zero-alpha test ($p=0.122$ and $p=0.067$).</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>EMPIRICAL PROOF #2:</strong> In a direct stock-level horse race (Table 10, Model 3), $\text{NVF}$ knocks out $\text{HML}$ ($t=3.285$ vs $1.576$) and enables FF5/FF6 to pass the GRS zero-alpha test ($p=0.122$ and $p=0.067$).</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step active" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 06 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 6 / 11</div>
     </div>
 
@@ -1272,7 +1468,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 7: THE BRIDGE TO CRITIQUE — TABLE 11 SIZE ANATOMY
        ========================================== -->
-  <section class="slide" data-section="3">
+  
+
+<section class="slide" data-section="3">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 4 • CRITICAL LIMITATIONS (THE HIDDEN VULNERABILITY IN TABLE 11)</div>
@@ -1418,8 +1616,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>BRIDGE TO CRITIQUE:</strong> Table 11 proves that naive market-cap weighting inside the Big tercile dilutes signal strength by $>50\%$, motivating our Layer-1 & Layer-2 Quantitative Enhancements.</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>BRIDGE TO CRITIQUE:</strong> Table 11 proves that naive market-cap weighting inside the Big tercile dilutes signal strength by $>50\%$, motivating our Layer-1 & Layer-2 Quantitative Enhancements.</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step active" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 07 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 7 / 11</div>
     </div>
 
@@ -1435,7 +1655,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 8: FIVE METHODOLOGICAL & PRACTICAL LIMITATIONS
        ========================================== -->
-  <section class="slide" data-section="3">
+  
+
+<section class="slide" data-section="3">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 4 • CONSTRUCTIVE CRITIQUE & METHODOLOGICAL BOUNDARIES</div>
@@ -1447,65 +1669,99 @@ window.MathJax = {
     </div>
 
     <div class="slide-body grid-2">
-      <div style="display:flex; flex-direction:column; gap:0.65rem;">
+      <!-- Left Column: Pillar A - Accounting Foundations & Factor Specification -->
+      <div style="display:flex; flex-direction:column; gap:0.55rem; justify-content:space-between; min-width:0;">
         <div class="panel-burgundy">
-          <div style="font-size:0.75rem; font-weight:700; color:var(--accent-burgundy); text-transform:uppercase; margin-bottom:0.25rem;">
-            1. The Intangible Capital Paradox (Internal Logic Contradiction)
+          <div style="font-size:0.74rem; font-weight:700; color:var(--accent-burgundy); text-transform:uppercase; margin-bottom:0.25rem;">
+            1. The Intangible Capital Paradox (Knowledge Economy Contradiction)
           </div>
-          <div style="font-size:0.76rem; line-height:1.4;">
-            Pages 1–2 critique $B/M$ for failing to capture intangible investments in the knowledge economy. Yet, $\text{OP} = \text{Rev} - \text{COGS} - \mathbf{\text{SG\&A}}$ deducts <strong>100% of $\text{SG\&A}$</strong>, which houses R&D, software, IT, and human capital investment! Subtracting full $\text{SG\&A}$ penalizes asset-light knowledge firms and misclassifies R&D-heavy innovators as "low-cash-profitability" shorts (Peters & Taylor, 2017; Arnott et al., 2021).
+          <div style="font-size:0.75rem; line-height:1.4;">
+            Pages 1–2 of the paper argue that $B/M$ failed because knowledge-economy firms invest heavily in intangibles (R&D, software, patents, human capital) omitted from balance-sheet book value. <strong>Yet the paper's own formula:</strong>
+            $$\text{OP} = \text{Revenue} - \text{COGS} - \mathbf{\text{SG\&A}}$$
+            deducts <strong>100% of $\text{SG\&A}$</strong>, which houses R&D, brand equity, and software development! By treating all intangible investments as immediate expenses rather than capital, $\text{CBOP}$ penalizes innovation-intensive tech/pharma firms, misclassifying them as "low-profitability" shorts (Peters & Taylor, 2017; Arnott et al., 2021).
           </div>
         </div>
 
         <div class="panel-burgundy">
-          <div style="font-size:0.75rem; font-weight:700; color:var(--accent-burgundy); text-transform:uppercase; margin-bottom:0.25rem;">
-            2. Weak $\text{RMW}$ Benchmark (Footnote 3) & Missing $\text{OP}/M$ Horse-Race
+          <div style="font-size:0.74rem; font-weight:700; color:var(--accent-burgundy); text-transform:uppercase; margin-bottom:0.25rem;">
+            2. Weak RMW Benchmark (Footnote 3) & Missing OP/M Horse-Race
           </div>
-          <div style="font-size:0.76rem; line-height:1.4;">
-            • <strong>Footnote 3 (p. 5):</strong> Defines $\text{RMW}$ using <em>Gross Profit Margin</em> ($\text{GP}/\text{Revenue}$) instead of Fama-French (2015) Operating Profitability ($\text{OP}/\text{BE}$) or Novy-Marx (2013) $\text{GP}/\text{Total Assets}$. Margin conflates sector pricing power with capital efficiency, making $\text{RMW}$ artificially weak in Table 10 ($t = 0.218$).<br>
-            • <strong>Missing Decomposition:</strong> Since $\frac{\text{CBOP}}{M} \equiv \frac{\text{OP}}{M} - \frac{\Delta\text{WC}}{M}$, not testing against $\text{OP}/M$ leaves unproven how much alpha stems from <em>cash adjustment</em> ($\Delta\text{WC}$) vs. simply replacing $B$ with <em>flow earnings</em> ($\text{OP}$).
+          <div style="font-size:0.75rem; line-height:1.4;">
+            • <strong>Footnote 3 (p. 5) Vulnerability:</strong> The paper constructs $\text{RMW}$ using Gross Profit Margin ($\text{GP}/\text{Revenue}$) instead of Fama-French (2015) Operating Profitability ($\text{OP}/\text{BE}$) or Novy-Marx (2013) $\text{GP}/\text{Assets}$. Margin captures sector pricing power rather than capital efficiency, weakening the RMW control ($t=0.218$ in Table 10).<br>
+            • <strong>Missing Decomposition:</strong> Since $\frac{\text{CBOP}}{M} \equiv \frac{\text{OP}}{M} - \frac{\Delta\text{WC}}{M}$, omitting a direct horse-race against $\text{OP}/M$ leaves unproven how much alpha stems from <em>cash accrual adjustment</em> ($\Delta\text{WC}$) vs. simply replacing static $B$ with <em>flow earnings</em> ($\text{OP}$).
           </div>
         </div>
 
-        <div class="panel-burgundy">
-          <div style="font-size:0.75rem; font-weight:700; color:var(--accent-burgundy); text-transform:uppercase; margin-bottom:0.25rem;">
-            3. Unconditional Sorting & Unintended Industry Bets
-          </div>
-          <div style="font-size:0.76rem; line-height:1.4;">
-            Sorting all non-financial firms unconditionally ignores structural working-capital differences across UK industries (e.g., Retail runs negative working capital via high payables $\Delta\text{AP}$, whereas Manufacturing carries heavy inventory $\Delta\text{INV}$).
-          </div>
+        <div class="formula-box" style="margin:0; font-size:0.73rem;">
+          $$\text{Decomposition Identity: } \underbrace{\frac{\text{CBOP}_{i,t}}{M_{i,t}}}_{\text{Paper's Metric}} \equiv \underbrace{\frac{\text{OP}_{i,t} + \theta_{\text{int}}\text{SG\&A}_{i,t}}{M_{i,t}}}_{\text{Intangible-Adjusted Flow Yield}} - \underbrace{\frac{\Delta\text{WC}_{i,t}}{M_{i,t}}}_{\text{Cash Accrual Component}}$$
         </div>
       </div>
 
-      <div style="display:flex; flex-direction:column; gap:0.65rem; justify-content:space-between;">
+      <!-- Right Column: Pillar B - Econometric Rigor & Institutional Trading Frictions -->
+      <div style="display:flex; flex-direction:column; gap:0.55rem; justify-content:space-between; min-width:0;">
         <div class="panel-navy">
-          <div style="font-size:0.75rem; font-weight:700; color:var(--accent-navy); text-transform:uppercase; margin-bottom:0.25rem;">
-            4. Econometric Inference in Fama-MacBeth (EIV & Serial Correlation)
+          <div style="font-size:0.74rem; font-weight:700; color:var(--accent-navy); text-transform:uppercase; margin-bottom:0.25rem;">
+            3. Unconditional Sorting & Cross-Sector Distortions
           </div>
-          <div style="font-size:0.76rem; line-height:1.4;">
-            Table 10 runs second-stage regressions on individual stocks using first-stage estimated betas ($\hat{\beta}_{i,k}$). This introduces severe <strong>Errors-in-Variables (EIV) attenuation bias</strong> and requires <strong>Shanken (1992) standard error corrections</strong> and <strong>Newey-West HAC</strong> adjustments not reported in the paper. Also, setting missing working-capital components to zero (p. 4) risks measurement noise in early sample years.
+          <div style="font-size:0.75rem; line-height:1.4;">
+            Sorting all non-financial firms unconditionally into deciles creates unintended sector bets. Structural working capital differs inherently across UK industries:
+            • <strong>Retail & Supermarkets</strong> operate with negative working capital via large trade credit ($\Delta\text{AP} > 0$), mechanically boosting their $\text{CBOP}$.<br>
+            • <strong>Manufacturing & Industrials</strong> require heavy inventories ($\Delta\text{INV} > 0$), mechanically depressing their $\text{CBOP}$.
+            Without sector-neutralization, the portfolio makes unintended macroeconomic industry bets.
           </div>
         </div>
 
         <div class="panel-navy">
-          <div style="font-size:0.75rem; font-weight:700; color:var(--accent-navy); text-transform:uppercase; margin-bottom:0.25rem;">
-            5. Live Execution Frictions, UK Stamp Duty & 11-Month Signal Lag
+          <div style="font-size:0.74rem; font-weight:700; color:var(--accent-navy); text-transform:uppercase; margin-bottom:0.25rem;">
+            4. Econometric Inference in Fama-MacBeth (EIV & Noise)
           </div>
-          <div style="font-size:0.76rem; line-height:1.4;">
-            • <strong>UK Stamp Duty Reserve Tax (SDRT):</strong> Every UK equity purchase incurs an immediate <strong>50 bps ($0.50\%$) tax</strong> plus bid-ask spreads.<br>
-            • <strong>Short-Leg Fragility:</strong> 50.4% of the raw spread ($-0.592\%$ of $1.175\%$) comes from shorting Decile 10 cash-burning firms ($\text{CBOP}/M = -0.454$), which face high stock-loan borrowing fees ($150–400\text{ bps/yr}$) and short-squeeze risk.<br>
-            • <strong>Stale Annual Rebalancing:</strong> Rebalancing only once a year in July leaves accounting signals stale for up to 11–15 months.
+          <div style="font-size:0.75rem; line-height:1.4;">
+            • <strong>Errors-in-Variables (EIV):</strong> Table 10 runs 2nd-stage regressions on individual stocks using 1st-stage estimated betas ($\hat{\beta}_{i,k}$). This introduces EIV attenuation bias, requiring <strong>Shanken (1992)</strong> standard error corrections.<br>
+            • <strong>Serial Correlation & Missing Data:</strong> Standard FM SEs ignore time-series persistence, requiring <strong>Newey-West HAC</strong>. Setting missing working capital components to zero (p. 4) injects measurement noise in early sample years.
           </div>
         </div>
 
-        <div class="formula-box" style="margin:0;">
-          $$\text{Untested Identity: } \underbrace{\frac{\text{CBOP}_{i,t}}{M_{i,t}}}_{\text{Paper's Metric}} = \underbrace{\frac{\text{OP}_{i,t} + \theta_{\text{int}}\text{SG\&A}_{i,t}}{M_{i,t}}}_{\text{Intangible-Adjusted Earnings Yield}} - \underbrace{\frac{\Delta \text{Working Capital Accruals}_{i,t}}{M_{i,t}}}_{\text{Sloan (1996) Cash Accrual Component}}$$
+        <div class="panel-navy">
+          <div style="font-size:0.74rem; font-weight:700; color:var(--accent-navy); text-transform:uppercase; margin-bottom:0.25rem;">
+            5. Real-World Execution Frictions & Short-Leg Fragility
+          </div>
+          <div style="font-size:0.75rem; line-height:1.4;">
+            • <strong>UK Stamp Duty Reserve Tax (SDRT):</strong> Every UK equity purchase incurs a mandatory <strong>50 bps ($0.50\%$) tax</strong>.<br>
+            • <strong>Short-Leg Borrowing & Squeeze Risk:</strong> 50.4% of raw spread comes from shorting Decile 10 cash-burners ($\text{CBOP}/M = -0.454$), facing high borrow fees ($150–400\text{ bps/yr}$) and short squeezes.<br>
+            • <strong>11-Month Signal Staleness:</strong> Annual July rebalancing leaves financial statements stale by up to 11–15 months.
+          </div>
+        </div>
+
+        <div class="formula-box" style="margin:0; font-size:0.73rem; border-left-color:var(--accent-burgundy);">
+          $$\text{Targeted Upgrade: } \mathcal{S}_{i,t}^{\text{adj}} = z\text{-score}_{\text{ind}}\left(\frac{\text{CBOP}_{i,t}^*}{M_{i,t}}\right) \quad \Longrightarrow \quad \min_{\mathbf{w}} \; \mathbf{w}'\mathbf{\Sigma}\mathbf{w} + \lambda_{\text{cost}}\|\mathbf{w} - \mathbf{w}_0\|_1$$
         </div>
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>REVIEWER VERDICT:</strong> The study's core signal ($\text{CBOP}/M$) is theoretically sound and empirically strong, but requires 5 targeted quantitative upgrades to survive institutional live trading.</div>
+    <!-- <div class="bottom-takeaway">
+      <div><strong>REVIEWER VERDICT:</strong> The study's core signal ($\text{CBOP}/M$) is theoretically sound and empirically strong, but requires 5 targeted quantitative upgrades to survive institutional live trading.</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step active" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 08 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 8 / 11</div>
     </div>
 
@@ -1519,7 +1775,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 9: QUANTITATIVE ENHANCEMENT & ARXIV:2108.02838
        ========================================== -->
-  <section class="slide" data-section="4">
+  
+
+<section class="slide" data-section="4">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 5 • QUANTITATIVE ENHANCEMENT & PORTFOLIO OPTIMIZATION</div>
@@ -1570,8 +1828,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>ARCHITECTURAL SYNERGY:</strong> We do not replace Dr. Duong's $\text{CBOP}/M$ discovery—we preserve it as Layer 1 and wrap it in an institutional Layer-2 optimizer to conquer net-of-cost Big-Cap trading.</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>ARCHITECTURAL SYNERGY:</strong> We do not replace Dr. Duong's $\text{CBOP}/M$ discovery—we preserve it as Layer 1 and wrap it in an institutional Layer-2 optimizer to conquer net-of-cost Big-Cap trading.</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step active" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 09 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 9 / 11</div>
     </div>
 
@@ -1585,7 +1865,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 10: INTERACTIVE DASHBOARD SANDBOX (GRADIO + BOKEH)
        ========================================== -->
-  <section class="slide" data-section="5">
+  
+
+<section class="slide" data-section="5">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 6 • LIVE TRADING DASHBOARD & EMPIRICAL ABLATION STUDY</div>
@@ -1728,8 +2010,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>LIVE DEMO CONCLUSION:</strong> When realistic UK costs are applied to Table 11 Big-Caps, naive VW $\text{CBOP}/M$ loses significance ($t=1.42$). Our Layer 1+2 upgrade restores net FF6 $\alpha$ to $0.612\%$/mo ($t=3.48$).</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>LIVE DEMO CONCLUSION:</strong> When realistic UK costs are applied to Table 11 Big-Caps, naive VW $\text{CBOP}/M$ loses significance ($t=1.42$). Our Layer 1+2 upgrade restores net FF6 $\alpha$ to $0.612\%$/mo ($t=3.48$).</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step active" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 10 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 10 / 11</div>
     </div>
 
@@ -1743,7 +2047,9 @@ window.MathJax = {
   <!-- ==========================================
        SLIDE 11: CONCLUSION & Q&A DEFENSE MATRIX
        ========================================== -->
-  <section class="slide" data-section="5">
+  
+
+<section class="slide" data-section="5">
     <div class="slide-header">
       <div>
         <div class="kicker">SECTION 6 • SYNTHESIS & ACADEMIC DEFENSE</div>
@@ -1844,8 +2150,30 @@ window.MathJax = {
       </div>
     </div>
 
-    <div class="bottom-takeaway">
-      <div><strong>THANK YOU FOR YOUR ATTENTION!</strong> Questions & Critical Feedback Welcome • Ready to Switch to Live Gradio + Bokeh Dashboard Demo.</div>
+        <!-- <div class="bottom-takeaway">
+      <div><strong>THANK YOU FOR YOUR ATTENTION!</strong> Questions & Critical Feedback Welcome • Ready to Switch to Live Gradio + Bokeh Dashboard Demo.</div> -->
+
+    <!-- CFA Institutional Research Footer Bar -->
+    <footer class="slide-footer">
+      <div class="footer-cfa-track">
+        <span class="cfa-step" onclick="goToSlide(0)">01 THE VALUE PUZZLE</span>
+        <span class="cfa-step" onclick="goToSlide(2)">02 CBOP/M SPECIFICATION</span>
+        <span class="cfa-step" onclick="goToSlide(4)">03 EMPIRICAL PROOFS</span>
+        <span class="cfa-step" onclick="goToSlide(6)">04 CRITICAL LIMITATIONS</span>
+        <span class="cfa-step" onclick="goToSlide(8)">05 QUANT ENHANCEMENT</span>
+        <span class="cfa-step active" onclick="goToSlide(9)">06 LIVE DEMO & CONCLUSION</span>
+      </div>
+      <div class="footer-meta-info">
+        <span class="footer-source">Paper by Dr. Le Quy Duong (NEU, 2025) • <em>Journal of Economic Studies</em> • LSE 2000–2024</span>
+        <span class="footer-slide-num">Slide 11 / 11</span>
+        <div class="screen-controls">
+          <button class="ctrl-btn" onclick="toggleNotes()" title="Speaker Script (Key: N)">📜 Script</button>
+          <button class="ctrl-btn" onclick="prevSlide()" title="Previous Slide">◀</button>
+          <button class="ctrl-btn" onclick="nextSlide()" title="Next Slide">▶</button>
+          <button class="ctrl-btn" onclick="window.print()" title="Print to PDF">🖨️ PDF</button>
+        </div>
+      </div>
+    </footer>
       <div style="font-family:'JetBrains Mono'; font-size:0.68rem;">Slide 11 / 11</div>
     </div>
 
@@ -1855,27 +2183,6 @@ window.MathJax = {
     </div>
   </section>
 
-  <!-- ==========================================
-       UNIFIED CFA-STYLE PROGRESS FOOTER BAR
-       ========================================== -->
-  <footer class="deck-footer">
-    <div class="progress-track" id="progress-track">
-      <div class="prog-step active-sec" onclick="goToSlide(0)">1. The Value Puzzle</div>
-      <div class="prog-step" onclick="goToSlide(2)">2. CBOP/M & Methodology</div>
-      <div class="prog-step" onclick="goToSlide(4)">3. Empirical Proofs</div>
-      <div class="prog-step" onclick="goToSlide(6)">4. Critical Limitations</div>
-      <div class="prog-step" onclick="goToSlide(8)">5. Quant Enhancement</div>
-      <div class="prog-step" onclick="goToSlide(9)">6. Live Demo & Conclusion</div>
-    </div>
-    <div class="footer-controls">
-      <button class="ctrl-btn" onclick="toggleNotes()" title="Toggle Speaker Script (Key: N)">📜 Script [N]</button>
-      <button class="ctrl-btn" onclick="prevSlide()">◀</button>
-      <span id="slide-counter">01 / 11</span>
-      <button class="ctrl-btn" onclick="nextSlide()">▶</button>
-      <button class="ctrl-btn" onclick="window.print()" title="Export to PDF">🖨️ PDF</button>
-    </div>
-  </footer>
-
 </div>
 
 <!-- Floating Speaker Notes Drawer -->
@@ -1883,8 +2190,6 @@ window.MathJax = {
 
 <script>
   const slides = document.querySelectorAll('.slide');
-  const progSteps = document.querySelectorAll('.prog-step');
-  const counterEl = document.getElementById('slide-counter');
   const notesDrawer = document.getElementById('notes-drawer');
   let currentIdx = 0;
 
@@ -1892,13 +2197,8 @@ window.MathJax = {
     slides.forEach((s, i) => {
       s.classList.toggle('active', i === currentIdx);
     });
-    const activeSection = parseInt(slides[currentIdx].getAttribute('data-section'), 10);
-    progSteps.forEach((step, idx) => {
-      step.classList.toggle('active-sec', idx === activeSection);
-    });
-    counterEl.textContent = String(currentIdx + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
     const noteContent = slides[currentIdx].querySelector('.slide-notes');
-    if (noteContent) {
+    if (noteContent && notesDrawer) {
       notesDrawer.innerHTML = noteContent.innerHTML;
     }
   }
@@ -1918,12 +2218,16 @@ window.MathJax = {
   }
 
   function goToSlide(idx) {
-    currentIdx = idx;
-    updateDeck();
+    if (idx >= 0 && idx < slides.length) {
+      currentIdx = idx;
+      updateDeck();
+    }
   }
 
   function toggleNotes() {
-    notesDrawer.classList.toggle('open');
+    if (notesDrawer) {
+      notesDrawer.classList.toggle('open');
+    }
   }
 
   document.addEventListener('keydown', (e) => {
